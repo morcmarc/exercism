@@ -1,0 +1,4 @@
+.cabal-sandbox
+target
+.lein-failures
+.lein-repl-history
