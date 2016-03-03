@@ -1,6 +1,12 @@
-module Sublist where
+module Sublist (Sublist(..), sublist) where
 
-data Sublist = Equal | Sublist | Superlist | Unequal deriving (Enum, Eq)
+import Data.List (isInfixOf)
 
-sublist :: a -> a -> Sublist
-sublist _ _ = Equal
+data Sublist = Equal | Sublist | Superlist | Unequal deriving (Enum, Eq, Show)
+
+sublist :: (Eq a) => [a] -> [a] -> Sublist
+sublist x y
+    | x == y          = Equal
+    | x `isInfixOf` y = Sublist
+    | y `isInfixOf` x = Superlist
+    | otherwise       = Unequal
