@@ -1,11 +1,11 @@
 module Bob where
 
-import qualified Data.Text as T
 import qualified Data.Char as C
+import qualified Data.Text as T
 
 isShout :: T.Text -> Bool
 isShout s = (T.toUpper s == s) &&
-            (T.length $ T.filter C.isAlpha s) > 0
+            T.length (T.filter C.isAlpha s) > 0
 
 isQuestion :: T.Text -> Bool
 isQuestion s = T.last s == '?'

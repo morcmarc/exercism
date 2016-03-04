@@ -1,12 +1,13 @@
 module DNA where
 
-import Data.Maybe (fromJust)
+import           Data.Maybe (fromJust)
 
+rnaMap :: [(Char, Char)]
 rnaMap = [
-    ('C','G'), 
-    ('G','C'), 
-    ('T','A'), 
+    ('C','G'),
+    ('G','C'),
+    ('T','A'),
     ('A','U')]
 
 toRNA :: String -> String
-toRNA dna = map (\c -> fromJust $ lookup c rnaMap) dna
+toRNA = map (\c -> fromJust $ lookup c rnaMap)

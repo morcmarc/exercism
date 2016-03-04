@@ -1,6 +1,6 @@
 module Strain where
 
-import Data.List
+import           Data.List
 
 keep :: (Eq a) => (a -> Bool) -> [a] -> [a]
 keep _ [] = []

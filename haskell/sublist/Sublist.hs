@@ -1,6 +1,6 @@
 module Sublist (Sublist(..), sublist) where
 
-import Data.List (isInfixOf)
+import           Data.List (isInfixOf)
 
 data Sublist = Equal | Sublist | Superlist | Unequal deriving (Enum, Eq, Show)
 
